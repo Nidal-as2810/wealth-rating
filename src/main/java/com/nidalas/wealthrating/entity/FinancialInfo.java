@@ -1,2 +1,9 @@
-package com.nidalas.wealthrating.entity;public class FinancialInfo {
+package com.nidalas.wealthrating.entity;
+
+import lombok.Data;
+
+@Data
+public class FinancialInfo {
+    private float cash;
+    private int numberOfAssets;
 }

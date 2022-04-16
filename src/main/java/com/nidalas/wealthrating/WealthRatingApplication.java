@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class WealthRatingApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(WealthRatingApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(WealthRatingApplication.class, args);
+    }
 
 }

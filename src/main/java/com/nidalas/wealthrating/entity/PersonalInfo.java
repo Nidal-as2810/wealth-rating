@@ -1,2 +1,10 @@
-package com.nidalas.wealthrating.entity;public class PersonalInfo {
+package com.nidalas.wealthrating.entity;
+
+import lombok.Data;
+
+@Data
+public class PersonalInfo {
+    private String firstName;
+    private String lastName;
+    private String city;
 }
