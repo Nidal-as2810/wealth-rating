@@ -10,16 +10,8 @@ public class ThresholdDao {
     @Autowired
     private ThresholdRepo thresholdRepo;
 
-    public float getThreshold(){
-        int id=1;
-        WealthThresholdEntity threshold=this.thresholdRepo.getById(id);
-        return threshold.getThreshold();
+    public double getThreshold(){
+           return 2586667816.0;
     }
 
-    public WealthThresholdEntity add(WealthThresholdEntity threshold){
-        if(threshold.getId()!=1){
-            threshold.setId(1);
-        }
-        return this.thresholdRepo.save(threshold);
-    }
 }

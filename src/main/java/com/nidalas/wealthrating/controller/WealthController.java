@@ -25,15 +25,16 @@ public class WealthController {
     }
 
     @GetMapping(path = "/get-by-id")
-    public WealthEntity getById(@RequestParam String id){
+    public WealthEntity getById(@RequestParam Long id){
         return this.wealthDao.getById(id);
     }
 
     @PostMapping(path = "/wealth-rating")
     public String wealthRating(@RequestBody Person person){
-        float threshold=this.thresholdController.getThreshold();
+        double threshold=this.thresholdController.getThreshold();
         float assetValue=this.assetController.getByCity(person.getPersonalInfo().getCity());
 
-        return this.wealthDao.wealthRate(person,assetValue,threshold);
+        return this.wealthDao.wealthRate(person, assetValue, threshold);
+
     }
 }

@@ -16,5 +16,5 @@ public class WealthThresholdEntity {
     private Integer id;
 
     @Column(name = "threshold")
-    private float 	threshold;
+    private double 	threshold;
 }

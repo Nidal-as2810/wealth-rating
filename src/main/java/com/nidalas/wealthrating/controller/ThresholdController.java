@@ -13,12 +13,8 @@ public class ThresholdController {
     private ThresholdDao thresholdDao;
 
     @GetMapping(path = "/wealth-threshold")
-    public float getThreshold(){
+    public double getThreshold(){
         return this.thresholdDao.getThreshold();
     }
 
-    @PostMapping(path = "/update-threashold")
-    public WealthThresholdEntity update(@RequestBody WealthThresholdEntity threshold){
-        return this.thresholdDao.add(threshold);
-    }
 }

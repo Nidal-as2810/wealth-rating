@@ -17,15 +17,24 @@ public class WealthDao {
         return this.wealthyRepo.findAll();
     }
 
-    public WealthEntity getById(String id){
-        return this.wealthyRepo.getById(id);
+    public WealthEntity getById(Long id){
+//        try {
+            return this.wealthyRepo.getByIdNumber(id);
+//        }catch (Exception err){
+//            System.out.println(err.getMessage());
+//            return null;
+//        }
     }
 
-    public String wealthRate(Person person, float assetValue ,float threshold){
-        float fortune=person.getFinancialInfo().getCash() + person.getFinancialInfo().getNumberOfAssets() * assetValue;
+    public String wealthRate(Person person, float assetValue ,double threshold){
+        if (assetValue==0){
+            return person.getPersonalInfo().getCity()+" doesn't exist. Sorry we can't evaluate his/her wealth.";
+        }
+
+        double fortune=person.getFinancialInfo().getCash() + person.getFinancialInfo().getNumberOfAssets() * assetValue;
         if(fortune >=threshold){
             WealthEntity wealth=new WealthEntity();
-            wealth.setId(person.getId());
+            wealth.setIdNumber(person.getId());
             wealth.setFirstName(person.getPersonalInfo().getFirstName());
             wealth.setLastName(person.getPersonalInfo().getLastName());
             wealth.setFortune(fortune);

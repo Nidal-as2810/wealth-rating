@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class FinancialInfo {
-    private float cash;
+    private double cash;
     private int numberOfAssets;
 }

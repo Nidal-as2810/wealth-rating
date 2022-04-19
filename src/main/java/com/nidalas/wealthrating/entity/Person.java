@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Person {
-    private String id;
+    private Long id;
     private PersonalInfo personalInfo;
     private FinancialInfo financialInfo;
 }

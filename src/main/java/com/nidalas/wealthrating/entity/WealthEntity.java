@@ -2,18 +2,19 @@ package com.nidalas.wealthrating.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "wealthy")
 public class WealthEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private String id;
+    private int id;
+
+    @Column(name = "id_number")
+    private Long idNumber;
 
     @Column(name = "first_name")
     private String firstName;
@@ -22,5 +23,5 @@ public class WealthEntity {
     private String lastName;
 
     @Column(name = "fortune")
-    private float fortune;
+    private double fortune;
 }
